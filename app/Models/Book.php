@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,5 +23,4 @@ class Book extends Model
         return $this->hasOne(Borrow::class, 'borrow_id');
     }
 }
-
 ?>

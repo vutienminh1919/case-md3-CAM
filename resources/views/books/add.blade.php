@@ -83,10 +83,11 @@
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
                                     </select>
-                                
+
 
                                 <button type="submit" class="btn btn-primary">Lưu</button>
                                 <p>Trường <strong class="text-danger"> * </strong> là trường bắt buộc!</p>
+                                </div>
                             </form>
 
                         </div>
