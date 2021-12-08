@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
+
 use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
@@ -22,9 +22,11 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function (){
+   return view('frontend.home');
+});
 
-
-Route::get('', [AuthController::class, 'showFormLogin'])->name('login');
+Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/register', [AuthController::class, 'showFormRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
