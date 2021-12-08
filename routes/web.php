@@ -81,8 +81,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
 
 
-
-
     Route::prefix('borrows')->group(function () {
         Route::get('', [BorrowController::class, 'index'])->name('borrows.index');
         Route::get('/find-student/{idStudent}', [BorrowController::class, 'findStudent']);

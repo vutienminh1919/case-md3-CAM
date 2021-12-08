@@ -21,7 +21,7 @@ class AuthController extends Controller
 
     function showFormLogin()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     function login(Request $request)
@@ -57,7 +57,7 @@ class AuthController extends Controller
         $data['password'] = Hash::make($request->password);
         $user = User::query()->create($data);
 //        toastr()->success('Register Success !');
-        return redirect()->route('auth.login');
+        return redirect()->route('login');
     }
 
 
