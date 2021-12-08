@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Http\Requests\CreateCategoryRequest;
@@ -10,6 +11,11 @@ use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller implements BaseInterface
 {
+    protected $categoryRepository;
+    public function __construct(CategoryRepository $categoryRepository)
+    {
+
+    }
 
     public function index()
     {

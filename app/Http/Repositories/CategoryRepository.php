@@ -12,4 +12,10 @@ class CategoryRepository extends BaseRepository
         parent::__construct($model);
     }
 
+    public function store()
+    {
+
+    }
+
+
 }

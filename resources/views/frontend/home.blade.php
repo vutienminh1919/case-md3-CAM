@@ -37,7 +37,7 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
-          <h1 class="logo me-auto me-lg-0"><a href="index.html">Vương quốc sách</a></h1>
+          <h1 style="margin-top: 10px" class="logo me-auto me-lg-0"><a href="index.html">Vương quốc sách</a></h1>
 
 
           <nav id="navbar" class="navbar order-last order-lg-0">
@@ -47,7 +47,7 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
 
-          <a href="/login" class="get-started-btn scrollto">Đăng nhập</a>
+          <a style="margin-top: 10px" href="/login" class="get-started-btn scrollto">Đăng nhập</a>
         </div>
       </div>
 
@@ -61,7 +61,7 @@
         <div class="col-xl-8">
           <h1> Gặp được một quyển sách hay, nên mua liền dù đọc được hay không đọc được, vì sớm muộn gì cũng cần đến nó </h1>
           <h2>Thư viện là kho tàng chứa tất cả của cải tinh thần của loài người</h2>
-          <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+          <a href="https://www.youtube.com/watch?v=LEZoY1eA3gc" class="glightbox play-btn mb-4"></a>
         </div>
       </div>
     </div>
