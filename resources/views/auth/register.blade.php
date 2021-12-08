@@ -5,6 +5,7 @@
     <title>Login V4</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
     <!--===============================================================================================-->
@@ -34,7 +35,11 @@
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-                <form class="login100-form validate-form" method="post">
+{{--<<<<<<< HEAD--}}
+{{--                <form class="login100-form validate-form" method="post">--}}
+{{--=======--}}
+                <form class="login100-form validate-form" method="post" action="{{ route('auth.register') }}">
+{{-->>>>>>> 2985501d0bdecefec14a749d3b099207d1de217a--}}
                     @csrf
                     <span class="login100-form-title p-b-49">
                         Đăng ký tài khoản

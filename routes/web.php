@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
+
 use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
