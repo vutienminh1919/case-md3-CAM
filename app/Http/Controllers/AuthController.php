@@ -66,7 +66,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login');
+        return redirect()->route('auth.login');
     }
 
 
@@ -91,7 +91,7 @@ class AuthController extends Controller
         }
         $user->password = Hash::make($request->newPassword);
         $user->save();
-        return redirect()->route('login');
+        return redirect()->route('auth.login');
 
 
     }

@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static where(string $string, string $string1, string $string2)
+ */
 class Book extends Model
 {
     use HasFactory;
@@ -23,4 +26,5 @@ class Book extends Model
         return $this->hasOne(Borrow::class, 'borrow_id');
     }
 }
+
 ?>
