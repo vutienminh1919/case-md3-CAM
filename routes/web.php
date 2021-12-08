@@ -24,7 +24,7 @@ use App\Http\Controllers\CategoryController;
 */
 Route::get('/', function (){
    return view('frontend.home');
-});
+})->name('/');
 
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
@@ -39,7 +39,7 @@ Route::post('change-password', [AuthController::class, 'changePassword'])->name(
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::prefix('users')->group(function () {
-        Route::get('/dashboard', [HomeController::class, 'index'])->name('home.index');
+        Route::get('/home', [HomeController::class, 'index'])->name('home.index');
         Route::get('', [UserController::class, 'index'])->name('users.index');
         Route::get('/create', [UserController::class, 'create'])->name('users.create');
         Route::post('/create', [UserController::class, 'store'])->name('users.store');
