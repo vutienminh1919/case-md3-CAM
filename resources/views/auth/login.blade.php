@@ -33,11 +33,9 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-{{--<<<<<<< HEAD--}}
-{{--				<form class="login100-form validate-form" method="post">--}}
-{{--=======--}}
+
 				<form class="login100-form validate-form" method="post" action={{ route('auth.login') }}>
-{{-->>>>>>> 2985501d0bdecefec14a749d3b099207d1de217a--}}
+
                     @csrf
 					<span class="login100-form-title p-b-49">
 						Đăng nhập
@@ -64,11 +62,10 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-{{--<<<<<<< HEAD--}}
-							<button class="login100-form-btn" type="submit">
-{{--=======--}}
-{{--							<button type="submit" class="login100-form-btn">--}}
-{{-->>>>>>> 2985501d0bdecefec14a749d3b099207d1de217a--}}
+
+							<button type="submit" class="login100-form-btn">
+
+
 								Đăng nhập
 							</button>
 						</div>
@@ -81,9 +78,7 @@
 					</div>
 
 					<div class="flex-c-m">
-{{--						<a href="#" class="login100-social-item bg1">--}}
-{{--							<i class="fa fa-facebook"></i>--}}
-{{--						</a>--}}
+			
 
 						<a href="{{ url('/auth/redirect/github') }}" type="button" class="login100-social-item bg2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">

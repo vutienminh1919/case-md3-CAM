@@ -22,9 +22,11 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function (){
+   return view('frontend.home');
+});
 
-
-Route::get('', [AuthController::class, 'showFormLogin'])->name('login');
+Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/register', [AuthController::class, 'showFormRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
@@ -78,8 +80,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::post('{id}/edit', [StudentController::class, 'update'])->name('students.update');
         Route::get('{id}/delete', [StudentController::class, 'destroy'])->name('students.delete');
     });
-
-
 
 
 
