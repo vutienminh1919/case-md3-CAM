@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller implements BaseInterface
 {
     function index() {
-        return view('layouts.dashboard');
+        return view('backend.home');
     }
 
     function create()
