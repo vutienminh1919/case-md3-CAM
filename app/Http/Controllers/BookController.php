@@ -22,7 +22,8 @@ class BookController extends Controller implements BaseInterface
 
     public function index()
     {
-        $books = Book::all();
+//        $books = Book::all();
+        $books = Book::latest()->paginate(5);
 //        $books = $this->bookRepository->getAll();
         $categories = Category::all();
         return view('books.list', compact('books', 'categories'));
@@ -108,8 +109,10 @@ class BookController extends Controller implements BaseInterface
     {
         $keyword = $request->input('keyword');
 //        $books = Book::where('name', 'LIKE', '%' . $keyword . '%')->get();
-        $books = Book::query()->where('name','LIKE',"%{$keyword}%")->get();
-
+        $books = Book::query()
+            ->where('name','LIKE',"%{$keyword}%")
+//            ->orWhere('category_id','LIKE',"{$keyword}%")
+            ->get();
 //        return response()->json($books);
         return view('books.list',compact('books'));
     }

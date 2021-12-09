@@ -19,7 +19,7 @@ class CategoryController extends Controller implements BaseInterface
 
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::latest()->paginate(5);
         return view('categories.list', compact('categories'));
     }
 
@@ -40,8 +40,6 @@ class CategoryController extends Controller implements BaseInterface
         return redirect()->route('categories.index', compact('message'));
 
     }
-
-
 
 
     public function edit($id)
@@ -70,5 +68,12 @@ class CategoryController extends Controller implements BaseInterface
         $message = "Xóa thể loại sách thành công!";
         toastr()->success('Xóa thể loại thành công ');
         return redirect()->route('categories.index', compact('message'));
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+
     }
 }

@@ -12,6 +12,7 @@
             </a>
         </div>
         <div class="navbar-container container-fluid">
+
             <ul class="nav-right">
                 <li class="header-notification">
                     <div class="dropdown-primary dropdown">
