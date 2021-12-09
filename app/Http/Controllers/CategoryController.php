@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller implements BaseInterface
 {
-    protected $categoryRepository;
-    public function __construct(CategoryRepository $categoryRepository)
-    {
-
-    }
+//    protected $categoryRepository;
+//    public function __construct(CategoryRepository $categoryRepository)
+//    {
+//
+//    }
 
     public function index()
     {

@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('master')
 @section('title', 'Thêm mới người dùng')
 @section('content')
-    <!-- Content Header (Page header) -->
+    <div class="pcoded-content">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -56,5 +56,6 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    </div>
     <!-- /.content -->
 @endsection
