@@ -40,7 +40,7 @@ Route::post('change-password', [AuthController::class, 'changePassword'])->name(
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::prefix('users')->group(function () {
         Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-        Route::get('', [UserController::class, 'index'])->name('users.index');
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
         Route::get('/create', [UserController::class, 'create'])->name('users.create');
         Route::post('/create', [UserController::class, 'store'])->name('users.store');
         Route::get('/{id}', [UserController::class, 'detail'])->whereNumber('id')->name('users.detail');
@@ -100,7 +100,9 @@ Route::get('/auth/redirect/{provider}', [SocialController::class, 'redirect']);
 Route::get('/callback/{provider}', [SocialController::class, 'callback']);
 
 
-
+// Route::get('/user', function (){
+//     return view('users.list');
+// });
 
 
 

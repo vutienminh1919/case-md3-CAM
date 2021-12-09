@@ -1,24 +1,8 @@
-@extends('layouts.app')
+@extends('master')
 @section('title', 'Thêm mới sách')
 @section('content')
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <ion-icon name="home-outline"><a href="#">Home</a></ion-icon>
-
-                    </ol>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
+<div class="pcoded-content">
+   
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -32,7 +16,7 @@
                             <form action="{{ route('books.store') }}" enctype="multipart/form-data" class="form" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <lable>Tên</lable><strong class="text-danger">*</strong>
+                                    <label>Tên</label><strong class="text-danger">*</strong>
                                     <input type="text" value="{{ old('name') }}"
                                            class="form-control @error('name') is-invalid  @enderror" name="name">
                                     @error('name')
@@ -101,5 +85,5 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
+</div>
 @endsection

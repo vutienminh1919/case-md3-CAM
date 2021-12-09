@@ -15,7 +15,7 @@
                     </a>
                     <ul class="pcoded-submenu">
                         <li class=" pcoded-hasmenu">
-                            <a href="#" class="waves-effect waves-dark">
+                            <a href="{{ route('books.index') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Danh sách sách</span>
                             </a>
 
@@ -33,7 +33,7 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="default/navbar-light.html" class="waves-effect waves-dark">
+                    <a href="{{ route('users.index') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-menu"></i>
                         </span>
