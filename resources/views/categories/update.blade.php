@@ -1,21 +1,21 @@
-@extends('layouts.app')
+@extends('master')
 @section('title', 'Chỉnh sửa thông tin người dùng')
 @section('content')
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
+    <div class="pcoded-content">
+{{--    <section class="content-header">--}}
+{{--        <div class="container-fluid">--}}
+{{--            <div class="row mb-2">--}}
+{{--                <div class="col-sm-6">--}}
 
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <ion-icon name="home-outline"><a href="#">Home</a></ion-icon>
-                    </ol>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
+{{--                </div>--}}
+{{--                <div class="col-sm-6">--}}
+{{--                    <ol class="breadcrumb float-sm-right">--}}
+{{--                        <ion-icon name="home-outline"><a href="#">Home</a></ion-icon>--}}
+{{--                    </ol>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div><!-- /.container-fluid -->--}}
+{{--    </section>--}}
 
     <!-- Main content -->
     <section class="content">
@@ -53,5 +53,6 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    </div>
     <!-- /.content -->
 @endsection

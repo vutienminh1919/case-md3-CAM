@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('master')
 @section('title', 'Thêm mới sinh vien')
 @section('content')
-    <!-- Content Header (Page header) -->
+    <div class="pcoded-content">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -82,7 +82,7 @@
                                     @enderror
                                 </div>
 
-                               
+
                                 <button type="submit" class="btn btn-primary">Lưu</button>
                                 <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
                                 <p>Trường <strong class="text-danger"> * </strong> là trường bắt buộc!</p>
@@ -99,5 +99,6 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    </div>
     <!-- /.content -->
 @endsection

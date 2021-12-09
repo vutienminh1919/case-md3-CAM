@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('master')
 @section('title','Danh sach phieu muon')
 @section('content')
-    <!-- Content Header (Page header) -->
+    <div class="pcoded-content">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -40,7 +40,7 @@
                                     <th>Ngay tra</th>
                                     <th>Trang thai</th>
                                     <th></th>
-                                    
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +52,7 @@
                                         <td>{{ $borrow->borrow_date }}</td>
                                         <td>{{ $borrow->borrow_return }}</td>
                                         <td>{{ $borrow->status }}</td>
-                                      
+
                                         {{-- <td>
                                             <a href="{{ route('borrows.edit', ['id' => $borrow->id]) }}"
                                                class="btn btn-primary"><i class="fas fa-edit"></i></a>
@@ -74,6 +74,6 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
+    </div>>
 @endsection
 
