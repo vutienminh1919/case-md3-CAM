@@ -58,11 +58,6 @@
                                             <option value="Lậu">Lậu</option>
                                             <option value="18+">18+</option>
                                         </select>
-{{--                                       <input type="text" value="{{ $book->status }}"--}}
-{{--                                            class="form-control @error('status') is-invalid  @enderror" name="status">--}}
-{{--                                        @error('status')--}}
-{{--                                            <p class="text-danger">{{ $message }}</p>--}}
-{{--                                        @enderror--}}
                                     </div>
                                     <div class="form-group">
                                         <label>Giá</label>
@@ -85,6 +80,8 @@
                                         </select>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Lưu</button>
+{{--                                    <a type="button" class="btn btn-danger" href="{{route('books.index')}}">Quay--}}
+{{--                                        lại</a>--}}
                                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy
                                     </button>
                                 </form>

@@ -22,7 +22,7 @@ class UserController extends Controller implements BaseInterface, UserInterface
 
     function index()
     {
-        $users = User::all();
+        $users = User::latest()->paginate(5);
         return view('users.list', compact('users'));
     }
 
@@ -37,12 +37,12 @@ class UserController extends Controller implements BaseInterface, UserInterface
 
     function create()
     {
-        if (Gate::allows('user-crud')) {
+//        if (Gate::allows('user-crud')) {
             $roles = Role::all();
             return view('users.add', compact('roles'));
-        } else {
-            abort(403);
-        }
+//        } else {
+//            abort(403);
+//        }
     }
 
     function destroy($id)
@@ -50,6 +50,7 @@ class UserController extends Controller implements BaseInterface, UserInterface
         $user = User::findOrFail($id);
         $user->roles()->detach();
         $user->delete();
+        toastr()->success('Xóa người dùng thành công');
         return redirect()->route('users.index');
     }
 
@@ -72,6 +73,7 @@ class UserController extends Controller implements BaseInterface, UserInterface
         } catch (\Exception $exception) {
             DB::rollback();
         }
+        toastr()->success('tạo mới người dùng thành công ');
         return redirect()->route('users.index');
     }
 
@@ -95,7 +97,7 @@ class UserController extends Controller implements BaseInterface, UserInterface
         } catch (\Exception $exception) {
             DB::rollBack();
         }
-
+        toastr()->success('Chỉnh sửa người dùng thành công ');
         return redirect()->route('users.index');
     }
 

@@ -60,15 +60,13 @@
                                     </td>
                                 </tr>
                             @endforeach
-
                             @else
                             <tr>
                                 <td colspan="6">Không có dữ liệu</td>
                             </tr>
-
                             @endif
-
                         </table>
+                        {{$categories->links()}}
                     </div>
                 </div>
             </div>

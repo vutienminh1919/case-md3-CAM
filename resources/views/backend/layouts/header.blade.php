@@ -13,10 +13,6 @@
         </div>
         <div class="navbar-container container-fluid">
             <ul class="nav-left">
-{{--                <form action="{{ route('books.search') }}" method="GET">--}}
-{{--                    <input type="text" name="keyword" required/>--}}
-{{--                    <button type="submit">Search</button>--}}
-{{--                </form>--}}
 
                 <li class="header-search">
                     <div class="main-search morphsearch-search">

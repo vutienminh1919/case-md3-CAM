@@ -46,19 +46,21 @@
                                     <input type="password" class="form-control" name="password_confirmation">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Lưu</button>
+                                <button class="btn btn-secondary"
+                                        onclick="window.history.go(-1); return false;">Hủy</button>
                                 <p>Trường <strong class="text-danger"> * </strong> là trường bắt buộc!</p>
                             </form>
 
                         </div>
-                       
+
                     </div>
-                    
+
                 </div>
-               
+
             </div>
-       
+
         </div>
-        
+
     </section>
 </div>
 @endsection

@@ -55,7 +55,7 @@
                                                     </path>
                                                 </svg>
                                             </a>
-                                           
+
                                             <a class="btn btn-outline-danger" onclick="return confirm('bạn có muốn xóa {{ $user->id }} không?')"
                                                 href="{{ route('users.delete', ['id' => $user->id]) }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -72,16 +72,17 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$users->links()}}
                         </div>
-                       
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
-        
+
     </section>
 </div>
 @endsection
