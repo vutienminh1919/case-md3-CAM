@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-
 use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
@@ -93,7 +92,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/search-book', [BorrowController::class, 'searchBook']);
         Route::get('/{id}/edit', [BorrowController::class, 'edit'])->name('borrows.edit');
         Route::post('/{id}/edit', [BorrowController::class, 'update'])->name('borrows.update');
-        Route::delete('/delete', [BorrowController::class, 'destroy'])->name('borrows.delete');
+        Route::get('/{id}/delete', [BorrowController::class, 'delete'])->name('borrows.delete');
     });
 });
 Route::get('/auth/redirect/{provider}', [SocialController::class, 'redirect']);
