@@ -69,4 +69,13 @@ class BorrowController extends Controller
     function update(Request $request){
         
     }
+
+    function delete(Request $request, $id){
+        $room = Borrow::findOrFail($id);
+       
+        $room->delete();
+
+        return redirect()->route('borrows.index');
+
+    }
 }

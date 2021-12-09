@@ -2,42 +2,25 @@
 @section('title', 'Thêm mới sinh vien')
 @section('content')
     <div class="pcoded-content">
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <ion-icon name="home-outline"><a href="#">Home</a></ion-icon>
-
-                    </ol>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Thêm mới sinh vien </h3>
+                            <h3 class="card-title">Chỉnh sửa thông tin người mượn </h3>
                         </div>
-                        <!-- /.card-header -->
+                       
                         <div class="card-body">
                             <form action="" class="form" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <lable>Tên</lable>
+                                    <label>Tên</label>
                                     <input type="text" value="{{ $student->name }}" class="form-control" name="name">
                                 </div>
 
                                 <div class="form-group">
-                                    <lable>Mã sinh viên</lable>
+                                    <label>Mã sinh viên</label>
                                     <strong class="text-danger">*</strong>
                                     <input type="text" value="{{ $student->student_code }}"
                                            class="form-control @error('student_code') is-invalid  @enderror" name="student_code">
@@ -47,7 +30,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <lable>Email</lable>
+                                    <label>Email</label>
                                     <strong class="text-danger">*</strong>
                                     <input type="email" value="{{ $student->email }}"
                                            class="form-control @error('email') is-invalid  @enderror" name="email">
@@ -57,7 +40,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <lable>Địa chỉ</lable>
+                                    <label>Địa chỉ</label>
                                     <strong class="text-danger">*</strong>
                                     <input type="text" value="{{ $student->address }}"
                                            class="form-control @error('address') is-invalid  @enderror" name="address">
@@ -73,7 +56,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <lable>Phone</lable>
+                                    <label>Phone</label>
                                     <strong class="text-danger">*</strong>
                                     <input type="text" value="{{ $student->phone }}"
                                            class="form-control @error('phone') is-invalid  @enderror" name="phone">

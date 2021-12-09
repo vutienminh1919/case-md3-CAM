@@ -3,7 +3,7 @@
         <div class="pcoded-inner-navbar main-menu">
             <ul class="pcoded-item pcoded-left-item">
                 <li class="pcoded-hasmenu active pcoded-trigger">
-                    <a href="#" class="waves-effect waves-dark">
+                    <a href="{{ route('home.index') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                         <span class="pcoded-mtext">Trang chủ</span>
                     </a>
