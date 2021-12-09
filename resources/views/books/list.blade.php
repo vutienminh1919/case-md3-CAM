@@ -2,12 +2,26 @@
 @section('title', 'Danh sách ')
 @section('content')
     <div class="pcoded-content">
-
+        <div class="wrapper">
+            <div class="search-box">
+                <form action="{{ route('books.search') }}" method="GET">
+                    <div class="input-group">
+                        <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
+                            <input type="search" name="keyword" class="form-control ds-input"  placeholder="Search..." aria-label="Search for..." >
+                        </span>
+                        <div class="btn">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+     
         <section class="content">
             <div class="main-container">
                 <div class="xs-pd-20-10 pd-ltr-20">
                     <div class="card mt-2">
-                        <h5 class="card-header">Danh sách sách
+                        <h5 class="card-header">Danh sách sách 
                             <a class="btn btn-outline-warning" href="{{ route('books.create') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -20,6 +34,7 @@
                                 </svg>
                             </a>
                         </h5>
+                      
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
@@ -68,8 +83,9 @@
                                                         </path>
                                                     </svg>
                                                 </a>
-                                               
-                                                <a class="btn btn-outline-danger" onclick="return confirm('bạn có muốn xóa {{ $book->name }} không?')"
+
+                                                <a class="btn btn-outline-danger"
+                                                    onclick="return confirm('bạn có muốn xóa {{ $book->name }} không?')"
                                                     href="{{ route('books.delete', ['id' => $book->id]) }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
