@@ -11,7 +11,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Thêm mới sách</h3>
                         </div>
-                        <!-- /.card-header -->
+                      
                         <div class="card-body">
                             <form action="{{ route('books.store') }}" enctype="multipart/form-data" class="form" method="post">
                                 @csrf
