@@ -13,18 +13,28 @@
         </div>
         <div class="navbar-container container-fluid">
             <ul class="nav-left">
+{{--                <form action="{{ route('books.search') }}" method="GET">--}}
+{{--                    <input type="text" name="keyword" required/>--}}
+{{--                    <button type="submit">Search</button>--}}
+{{--                </form>--}}
+
                 <li class="header-search">
                     <div class="main-search morphsearch-search">
+                        <form action="{{ route('books.search') }}" method="GET">
                         <div class="input-group">
+
                             <span class="input-group-prepend search-close">
                             <i class="feather icon-x input-group-text"></i>
                         </span>
-                            <input type="text" class="form-control" placeholder="Enter Keyword">
+
+                            <input type="text" class="form-control" name="keyword" placeholder="Enter Keyword">
                             <span class="input-group-append search-btn">
                             <i class="feather icon-search input-group-text"></i>
                         </span>
                         </div>
+                        </form>
                     </div>
+
                 </li>
                 <li>
                     <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">

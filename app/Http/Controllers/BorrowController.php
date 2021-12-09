@@ -54,6 +54,7 @@ class BorrowController extends Controller
         $borrow->borrow_return = $request->borrow_return;
         $borrow->status = 'đang mượn';
         $borrow->save();
+        toastr()->success('Tạo phiếu mượn thành công ');
         return redirect()->route('borrows.index');
     }
 
@@ -67,14 +68,14 @@ class BorrowController extends Controller
 
 
     function update(Request $request){
-        
+
     }
 
     function delete(Request $request, $id){
         $room = Borrow::findOrFail($id);
-       
-        $room->delete();
 
+        $room->delete();
+        toastr()->success('Xóa phiếu mượn thành công ');
         return redirect()->route('borrows.index');
 
     }

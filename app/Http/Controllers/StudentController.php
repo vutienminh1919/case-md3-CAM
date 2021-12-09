@@ -38,7 +38,7 @@ class StudentController extends Controller
         $student->phone = $request->phone;
         $student->save();
         $message = "Tạo sinh vien thành công!";
-        Session::flash('create-success', $message);
+        toastr()->success('Tạo sinh viên mới thành công ');
         return redirect()->route('students.index', compact('message'));
     }
 
@@ -69,7 +69,7 @@ class StudentController extends Controller
 
         $student->save();
         $message = "Cập nhật sinh vien thành công!";
-        Session::flash('update-success', $message);
+        toastr()->success('Cập nhật thông tin sinh viên thành công ');
         return redirect()->route('students.index', compact('message'));
     }
 
@@ -79,7 +79,7 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
         $student->delete();
         $message = "Xóa sinh vien thành công!";
-        Session::flash('delete-success', $message);
+        toastr()->success('Xóa sinh viên thành công ');
         return redirect()->route('students.index', compact('message'));
     }
 }

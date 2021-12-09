@@ -36,7 +36,7 @@ class CategoryController extends Controller implements BaseInterface
         $category->name = $request->name;
         $category->save();
         $message = "Tạo thể loại sách thành công!";
-        Session::flash('create-success', $message);
+        toastr()->success('Tạo thể loại mới thành công ');
         return redirect()->route('categories.index', compact('message'));
 
     }
@@ -57,7 +57,7 @@ class CategoryController extends Controller implements BaseInterface
         $category->name = $request->name;
         $category->save();
         $message = "Cập nhật thể loại sách thành công!";
-        Session::flash('update-success', $message);
+        toastr()->success('Sửa thể loại thành công ');
         return redirect()->route('categories.index', compact('message'));
 
     }
@@ -68,7 +68,7 @@ class CategoryController extends Controller implements BaseInterface
         $category = Category::findOrFail($id);
         $category->delete();
         $message = "Xóa thể loại sách thành công!";
-        Session::flash('delete-success', $message);
+        toastr()->success('Xóa thể loại thành công ');
         return redirect()->route('categories.index', compact('message'));
     }
 }

@@ -56,7 +56,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('{id}/update', [BookController::class, 'edit'])->name('books.update');
         Route::post('{id}/update', [BookController::class, 'update'])->name('books.edit');
         Route::get('{id}/delete', [BookController::class, 'destroy'])->name('books.delete');
-        Route::post('/search', [BookController::class, 'search'])->name('books.search');
+        Route::get('/search', [BookController::class, 'search'])->name('books.search');
     });
 
 

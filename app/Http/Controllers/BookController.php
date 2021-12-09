@@ -106,9 +106,12 @@ class BookController extends Controller implements BaseInterface
 
     function search(Request $request)
     {
-        $keyword = $request->keyword;
-        $books = Book::where('name', 'LIKE', '%' . $keyword . '%')->get();
-        return response()->json($books);
+        $keyword = $request->input('keyword');
+//        $books = Book::where('name', 'LIKE', '%' . $keyword . '%')->get();
+        $books = Book::query()->where('name','LIKE',"%{$keyword}%")->get();
+
+//        return response()->json($books);
+        return view('books.list',compact('books'));
     }
 
 }
