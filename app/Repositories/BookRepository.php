@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Repositories;
+namespace App\Repositories;
 
 use App\Http\Requests\CreateBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
-use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 
 class BookRepository extends BaseRepository
@@ -33,7 +32,7 @@ class BookRepository extends BaseRepository
         $book->price = $request->price;
         $book->category_id = $request->category_id;
         $book->save();
-
+        return $book;
 
     }
 

@@ -24,7 +24,7 @@ class SocialController extends Controller
         $user = $this->findOrCreateUser($getInfo, $provider);
 
         auth()->login($user);
-//        toastr()->success("Login by $provider Success !");
+        toastr()->success("Đăng nhập bằng $provider thành công !");
         return redirect()->route('home.index');
 
     }

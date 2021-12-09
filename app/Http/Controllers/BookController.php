@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Repositories\BookRepository;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Category;
@@ -12,11 +13,17 @@ use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller implements BaseInterface
 {
-
+//    protected $bookRepository;
+//
+//    public function __construct(BookRepository $bookRepository)
+//    {
+//        $this->bookRepository = $bookRepository;
+//    }
 
     public function index()
     {
         $books = Book::all();
+//        $books = $this->bookRepository->getAll();
         $categories = Category::all();
         return view('books.list', compact('books', 'categories'));
     }
@@ -42,16 +49,16 @@ class BookController extends Controller implements BaseInterface
 
         }
 
-        $book->status = $request->status;
+        $book->status = $request->input('status');
         $book->price = $request->price;
         $book->category_id = $request->category_id;
         $book->save();
-        $message = "Thêm Sách thành công!";
-        Session::flash('create-success', $message);
-        return redirect()->route('books.index', compact('message'));
+//        $book = $this->bookRepository->create($request);
+//        $message = "Thêm Sách thành công!";
+//        Session::flash('create-success', $message);
+        toastr()->success('Thêm sách mới thành công !!');
+        return redirect()->route('books.index');
     }
-
-
 
 
     public function edit($id)
@@ -81,7 +88,8 @@ class BookController extends Controller implements BaseInterface
 
         $book->save();
         $message = "Cập nhật thành công!";
-        Session::flash('update-success', $message);
+//        Session::flash('update-success', $message);
+        toastr()->success('Cập nhật sách thành công !!');
         return redirect()->route('books.index', compact('message'));
     }
 
@@ -91,7 +99,8 @@ class BookController extends Controller implements BaseInterface
         $book = Book::findOrFail($id);
         $book->delete();
         $message = "Xóa thành công ";
-        Session::flash('delete-success', $message);
+//        Session::flash('delete-success', $message);
+        toastr()->success('Xóa sách thành công !!');
         return redirect()->route('books.index', compact('message'));
     }
 

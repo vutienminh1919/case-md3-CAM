@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('files/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('files/assets/css/widget.css') }}">
+    @toastr_css
 </head>
 
 <body>
@@ -80,6 +81,9 @@
     <script type="text/javascript" src="{{ asset('files/assets/pages/dashboard/custom-dashboard.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('files/assets/js/script.min.js') }}"></script>
     <script src="{{ asset('js/my.js') }}"></script>
+{{--    @jquery--}}
+    @toastr_js
+    @toastr_render
 </body>
 
 </html>

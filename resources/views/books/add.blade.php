@@ -2,7 +2,7 @@
 @section('title', 'Thêm mới sách')
 @section('content')
 <div class="pcoded-content">
-   
+
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -42,11 +42,17 @@
                                 <div class="form-group">
                                     <label>Trạng thái</label>
                                     <strong class="text-danger">*</strong>
-                                    <input type="text" value="{{ old('status') }}"
-                                           class="form-control @error('status') is-invalid  @enderror" name="status">
-                                    @error('status')
-                                    <p class="text-danger">{{ $message }}</p>
-                                    @enderror
+                                    <select name="status">
+                                        <option value="Mới">Mới</option>
+                                        <option value="Cũ">Cũ</option>
+                                        <option value="Lậu">Lậu</option>
+                                        <option value="18+">18+</option>
+                                    </select>
+{{--                                    <input type="text" value="{{ old('status') }}"--}}
+{{--                                           class="form-control @error('status') is-invalid  @enderror" name="status">--}}
+{{--                                    @error('status')--}}
+{{--                                    <p class="text-danger">{{ $message }}</p>--}}
+{{--                                    @enderror--}}
                                 </div>
 
                                 <div class="form-group">
