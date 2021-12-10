@@ -6,8 +6,10 @@
             <div class="search-box">
                 <form action="#" method="GET">
                     <div class="input-group">
-                        <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
-                            <input type="search" name="keyword" class="form-control ds-input"  placeholder="Search..." aria-label="Search for..." >
+                        <span class="algolia-autocomplete"
+                            style="position: relative; display: inline-block; direction: ltr;">
+                            <input type="search" name="keyword" class="form-control ds-input" placeholder="Search..."
+                                aria-label="Search for...">
                         </span>
                         <div class="btn">
                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -16,8 +18,8 @@
                 </form>
             </div>
         </div>
-       
-      
+
+
         <div class="main-container">
             <div class="xs-pd-20-10 pd-ltr-20">
                 <div class="card mt-2">
@@ -62,8 +64,8 @@
                                             </a>
 
                                         </td>
-                                    </tr>
                                 @endforeach
+                                </tr>
                         </table>
                     </div>
 

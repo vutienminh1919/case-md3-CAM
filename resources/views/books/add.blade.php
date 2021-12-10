@@ -26,7 +26,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <lable>Mô tả</lable>
+                                        <label>Mô tả</label>
                                         <strong class="text-danger">*</strong>
                                         <input type="text" value="{{ old('desc') }}"
                                                class="form-control @error('desc') is-invalid  @enderror" name="desc">

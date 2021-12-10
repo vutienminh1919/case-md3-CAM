@@ -24,6 +24,7 @@
                                         <th>STT</th>
                                         <th>Tên</th>
                                         <th>Email</th>
+                                        <th>Ảnh</th>
                                         <th>Chức vụ</th>
                                         <th>Hoạt động</th>
 
@@ -35,6 +36,8 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
+                                            <td>{{ $user->avatar }}</td>
+                                            <td></td>
                                             <td>
                                                 @if (count($user->roles) > 0)
                                                     @foreach ($user->roles as $role)
