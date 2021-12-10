@@ -83,6 +83,24 @@
     <script type="text/javascript" src="{{ asset('files/assets/pages/dashboard/custom-dashboard.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('files/assets/js/script.min.js') }}"></script>
     <script src="{{ asset('js/my.js') }}"></script>
+     <script src="{{ asset('js/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["print"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
     <script>
         tinymce.init({
             selector: '#content'
@@ -92,6 +110,7 @@
 {{--    @jquery--}}
     @toastr_js
     @toastr_render
+   
 </body>
 
 </html>

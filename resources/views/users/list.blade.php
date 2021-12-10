@@ -37,7 +37,7 @@
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->avatar }}</td>
-                                            <td></td>
+                                           
                                             <td>
                                                 @if (count($user->roles) > 0)
                                                     @foreach ($user->roles as $role)

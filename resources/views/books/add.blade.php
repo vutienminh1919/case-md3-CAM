@@ -72,28 +72,19 @@
                                             @endforeach
                                         </select>
 
-
                                         <button type="submit" class="btn btn-primary">Lưu</button>
                                         <a type="button" class="btn btn-danger" href="{{route('books.index')}}">Hủy
-                                            </a>
-{{--                                        <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy--}}
-{{--                                        </button>--}}
+                                            </a>                                    
 
                                         <p>Trường <strong class="text-danger"> * </strong> là trường bắt buộc!</p>
                                     </div>
                                 </form>
 
-
                             </div>
-                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
         </section>
     </div>
 @endsection
