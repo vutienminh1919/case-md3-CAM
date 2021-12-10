@@ -32,17 +32,13 @@ class AuthController extends Controller
         ]);
 
         if ($this->loginService->checkLogin($request)) {
-            toastr()->success('Đăng nhập thành công  !!');
+            toastr()->success("Đăng nhập thành công !!");
             return redirect()->route('home.index');
         }
         else{
             return view('auth.fail');
         }
 
-//        Session::flash('error', 'Tài khoản mật khẩu không chính xác!');
-//
-//
-//        return back();
     }
 
     public function showFormRegister()
@@ -62,6 +58,7 @@ class AuthController extends Controller
         $user = User::query()->create($data);
         toastr()->success('Đăng ký thành công  !!');
         return redirect()->route('login');
+//        return view('auth.login');
     }
 
 

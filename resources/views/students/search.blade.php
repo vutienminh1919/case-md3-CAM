@@ -1,15 +1,18 @@
 @extends('master')
+@section('title', 'Danh sách sinh vien')
 @section('content')
     <div class="pcoded-content">
         <div class="wrapper">
             <div class="search-box">
-                <form action="{{route('categories.search')}}" method="GET">
+                <form action="{{route('students.search')}}" method="GET">
                     <div class="input-group">
                         <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
                             <input type="search" name="keyword" class="form-control ds-input"  placeholder="Search..." aria-label="Search for..." >
                         </span>
+
                         <div class="btn">
                             <i class="fa fa-search" aria-hidden="true"></i>
+
                         </div>
                     </div>
                 </form>
@@ -18,8 +21,8 @@
         <div class="main-container">
             <div class="xs-pd-20-10 pd-ltr-20">
                 <div class="card mt-2">
-                    <h5 class="card-header">Thể loại sách
-                        <a class="btn btn-outline-warning" href="{{ route('categories.create') }}">
+                    <h5 class="card-header">Danh sách người mượn
+                        <a class="btn btn-outline-warning" href="{{ route('students.create') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path
@@ -31,25 +34,39 @@
                             </svg>
                         </a>
                     </h5>
-
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th style="text-align:center">STT</th>
-                                <th style="text-align:center">Tên</th>
-                                <th style="text-align:center">Hoạt động</th>
+                                <th>Mã sinh viên</th>
+                                <th>Ảnh</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Địa chỉ</th>
+                                <th>Di động</th>
+                                <th>Hoạt động</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @if($categories->isNotEmpty())
-                            @foreach ($categories as $key => $category)
+                            @if($studentResult->isNotEmpty())
+                            @foreach ($studentResult as $key => $student)
                                 <tr>
-                                    <td style="text-align:center">{{ $key + 1 }}</td>
-                                    <td style="text-align:center">{{ $category->name }}</td>
-                                    <td style="text-align:center">
+                                    <td>{{ $student->student_code }}</td>
+                                    <td>
+                                        @if ($student->avatar)
+                                            <img src="{{ asset('storage/' . $student->avatar) }}"
+                                                 alt="{{ asset('storage/' . $student->avatar) }}" style="width: 150px">
+                                        @else
+                                            {{ 'chưa có ảnh ' }}
+                                        @endif
+                                    </td>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->email }}</td>
+                                    <td>{{ $student->address }}</td>
+                                    <td>{{ $student->phone }}</td>
+                                    <td>
                                         <a class="btn btn-outline-primary"
-                                           href="{{ route('categories.update', ['id' => $category->id]) }}">
+                                           href="{{ route('students.update', ['id' => $student->id]) }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                  fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
                                                 <path
@@ -59,8 +76,8 @@
                                         </a>
 
                                         <a class="btn btn-outline-danger"
-                                           onclick="return confirm('Bạn muốn xóa thể loại {{ $category->name }} không?')"
-                                           href="{{ route('categories.delete', ['id' => $category->id]) }}">
+                                           onclick="return confirm('Bạn có muốn xóa {{ $student->id }} không?')"
+                                           href="{{ route('students.delete', ['id' => $student->id]) }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                  fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                                 <path
@@ -71,21 +88,21 @@
                                                 </path>
                                             </svg>
                                         </a>
-
                                     </td>
                                 </tr>
                             @endforeach
                             @else
-                            <tr>
-                                <td colspan="6">Không có dữ liệu</td>
-                            </tr>
+                                <tr>
+                                    <td colspan="6">Không có dữ liệu </td>
+                                </tr>
                             @endif
                         </table>
-                        {{$categories->links()}}
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
-
 @endsection
+

@@ -105,16 +105,13 @@ class BookController extends Controller implements BaseInterface
         return redirect()->route('books.index', compact('message'));
     }
 
-    function search(Request $request)
+    public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-//        $books = Book::where('name', 'LIKE', '%' . $keyword . '%')->get();
-        $books = Book::query()
-            ->where('name','LIKE',"%{$keyword}%")
-//            ->orWhere('category_id','LIKE',"{$keyword}%")
+        $bookResult = Book::query()
+            ->where('name', 'LIKE', "%{$keyword}%")
             ->get();
-//        return response()->json($books);
-        return view('books.list',compact('books'));
+        return view('books.search', compact('bookResult'));
     }
 
 }

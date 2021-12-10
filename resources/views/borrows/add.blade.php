@@ -2,7 +2,7 @@
 @section('title', 'Thêm mới phiếu mượn sách')
 @section('content')
 <div class="pcoded-content">
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -123,8 +123,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="text" id="student-id" name="student_id">
-                                <input type="text" id="book-id" name="book_id">
+                                <input type="text" id="student-id" name="student_id" hidden>
+                                <input type="text" id="book-id" name="book_id" hidden>
 
                             </div>
                         </div>

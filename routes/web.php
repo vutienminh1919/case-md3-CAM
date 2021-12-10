@@ -21,8 +21,8 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function (){
-   return view('frontend.home');
+Route::get('/', function () {
+    return view('frontend.home');
 })->name('/');
 
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
@@ -33,7 +33,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('change-password', [AuthController::class, 'showFormChangePassword'])->name('change.form');
 Route::post('change-password', [AuthController::class, 'changePassword'])->name('change.password');
-
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
@@ -47,6 +46,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('{id}/update', [UserController::class, 'update'])->name('users.update');
         Route::post('{id}/update', [UserController::class, 'edit'])->name('users.edit');
         Route::get('{id}/delete', [UserController::class, 'destroy'])->name('users.delete');
+        Route::get('/search', [UserController::class, 'search'])->name('users.search');
     });
 
     Route::prefix('books')->group(function () {
@@ -57,6 +57,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::post('{id}/update', [BookController::class, 'update'])->name('books.edit');
         Route::get('{id}/delete', [BookController::class, 'destroy'])->name('books.delete');
         Route::get('/search', [BookController::class, 'search'])->name('books.search');
+
     });
 
 
@@ -67,8 +68,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
         Route::post('{id}/edit', [CategoryController::class, 'update'])->name('categories.update');
         Route::get('{id}/delete', [CategoryController::class, 'destroy'])->name('categories.delete');
+        Route::get('/search', [CategoryController::class, 'search'])->name('categories.search');
     });
-
 
 
     Route::prefix('students')->group(function () {
@@ -78,8 +79,11 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
         Route::post('{id}/edit', [StudentController::class, 'update'])->name('students.update');
         Route::get('{id}/delete', [StudentController::class, 'destroy'])->name('students.delete');
-    });
+        Route::get('/search', [StudentController::class, 'search'])->name('students.search');
 
+
+
+    });
 
 
     Route::prefix('borrows')->group(function () {
@@ -87,12 +91,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/find-student/{idStudent}', [BorrowController::class, 'findStudent']);
         Route::get('/find-book/{idBook}', [BorrowController::class, 'findBook']);
         Route::get('/create', [BorrowController::class, 'create'])->name('borrows.create');
-        Route::post("/create",[BorrowController::class,'store']);
+        Route::post("/create", [BorrowController::class, 'store']);
         Route::get('/search-student', [BorrowController::class, 'searchStudent']);
         Route::get('/search-book', [BorrowController::class, 'searchBook']);
         Route::get('/{id}/edit', [BorrowController::class, 'edit'])->name('borrows.edit');
         Route::post('/{id}/edit', [BorrowController::class, 'update'])->name('borrows.update');
         Route::get('/{id}/delete', [BorrowController::class, 'delete'])->name('borrows.delete');
+        Route::get('/search', [BorrowController::class, 'search'])->name('borrows.search');
+
     });
 });
 Route::get('/auth/redirect/{provider}', [SocialController::class, 'redirect']);

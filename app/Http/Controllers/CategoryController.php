@@ -73,7 +73,10 @@ class CategoryController extends Controller implements BaseInterface
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-
+        $categoryResult = Category::query()
+            ->where('name', 'LIKE', "%{$keyword}%")
+            ->get();
+        return view('categories.search', compact('categoryResult'));
 
     }
 }

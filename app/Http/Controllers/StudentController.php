@@ -82,4 +82,14 @@ class StudentController extends Controller
         toastr()->success('Xóa sinh viên thành công ');
         return redirect()->route('students.index', compact('message'));
     }
+
+    public function search(Request  $request)
+    {
+        $keyword = $request->input('keyword');
+        $studentResult = Student::query()
+            ->where('student_code','LIKE',"%{$keyword}%")
+            ->get();
+        return view('students.search',compact('studentResult'));
+
+    }
 }
