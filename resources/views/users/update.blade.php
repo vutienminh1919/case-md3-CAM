@@ -19,11 +19,12 @@
                                     <label>Tên</label>
                                     <input type="text" value="{{ $user->name }}" class="form-control" name="name">
                                 </div>
+                               
                                 <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="email" value="{{ $user->email }}" class="form-control" name="email">
+                                    <label for="exampleFormControlFile1">Ảnh</label>
+                                    <strong class="text-danger">*</strong>
+                                    <input type="file" name="avatar" class="form-control-file">
                                 </div>
-
                                 <div class="form-group">
                                     <label>Role</label>
                                     <strong class="text-danger">*</strong>

@@ -21,7 +21,11 @@
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Ảnh</label>
+                                    <strong class="text-danger">*</strong>
+                                    <input type="file" name="avatar" class="form-control-file">
+                                </div>
                                 <div class="form-group">
                                     <label>Role</label><strong class="text-danger">*</strong>
                                     @foreach($roles as $role)

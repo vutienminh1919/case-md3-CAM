@@ -54,9 +54,7 @@ class BookController extends Controller implements BaseInterface
         $book->price = $request->price;
         $book->category_id = $request->category_id;
         $book->save();
-//        $book = $this->bookRepository->create($request);
-//        $message = "Thêm Sách thành công!";
-//        Session::flash('create-success', $message);
+
         toastr()->success('Thêm sách mới thành công !!');
         return redirect()->route('books.index');
     }
@@ -89,7 +87,7 @@ class BookController extends Controller implements BaseInterface
 
         $book->save();
         $message = "Cập nhật thành công!";
-//        Session::flash('update-success', $message);
+
         toastr()->success('Cập nhật sách thành công !!');
         return redirect()->route('books.index', compact('message'));
     }
