@@ -56,9 +56,21 @@
 						<input class="input100" type="password" name="password" placeholder="Type your password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
+                    <div class="wrap-input100 validate-input" data-validate="Captcha is required">
+                        <span class="label-input100">Captcha</span>
+                        <div class="captcha">
+                            <div class="row">
+                                <span>{!! captcha_img() !!}</span>
+                                <button type="button" class="btn btn-danger" class="refresh-captcha" id="refresh-captcha">
+                                    &#x21bb;
+                                </button>
+                                <input id="captcha" type="text" class="input100" placeholder="Enter Captcha" name="captcha">
+                            </div>
+                        </div>
+                    </div>
 
 					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
+						<a href="{{route('forget.password.get')}}">
                             Quên mật khẩu
 						</a>
 					</div>
@@ -123,6 +135,18 @@
 
 	<script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    <script type="text/javascript">
+        $('#refresh-captcha').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'refresh-captcha',
+                success: function (data) {
+                    $(".captcha span").html(data.captcha);
+                }
+            });
+        });
+
+    </script>
 
 </body>
 </html>

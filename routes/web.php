@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
@@ -81,10 +82,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('{id}/delete', [StudentController::class, 'destroy'])->name('students.delete');
         Route::get('/search', [StudentController::class, 'search'])->name('students.search');
 
-
-
     });
-
 
     Route::prefix('borrows')->group(function () {
         Route::get('', [BorrowController::class, 'index'])->name('borrows.index');
@@ -108,9 +106,12 @@ Route::get('/callback/{provider}', [SocialController::class, 'callback']);
 // Route::get('/user', function (){
 //     return view('users.list');
 // });
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
-
-
+Route::get('/refresh-captcha', [AuthController::class, 'refreshCaptcha']);
 
 
 

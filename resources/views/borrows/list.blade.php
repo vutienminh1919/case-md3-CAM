@@ -44,8 +44,8 @@
                                 @foreach ($borrows as $key => $borrow)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $borrow->student->name }}</td>
-                                        <td>{{ $borrow->book->name }}</td>
+                                        <td>{{ $borrow->student->name ?? " " }}</td>
+                                        <td>{{ $borrow->book->name ?? " " }}</td>
                                         <td>{{ $borrow->borrow_date }}</td>
                                         <td>{{ $borrow->borrow_return }}</td>
                                         <td>{{ $borrow->status }}</td>

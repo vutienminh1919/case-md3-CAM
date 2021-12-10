@@ -28,13 +28,14 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email:filter',
-            'password' => 'required'
+            'password' => 'required',
+            'captcha' => 'required|captcha'
         ]);
 
         if ($this->loginService->checkLogin($request)) {
             toastr()->success("Đăng nhập thành công !!");
             return redirect()->route('home.index');
-            
+
         }
         else{
             return view('auth.fail');
@@ -52,7 +53,9 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'captcha' => 'required|captcha'
+
         ]);
         $data = $request->only('name', 'email', 'password');
         $data['password'] = Hash::make($request->password);
@@ -60,7 +63,7 @@ class AuthController extends Controller
         $user->save();
         toastr()->success('Đăng ký thành công  !!');
 
-        
+
         return redirect()->route('login');
 //        return view('auth.login');
     }
@@ -101,5 +104,9 @@ class AuthController extends Controller
         return redirect()->route('auth.login');
 
 
+    }
+    public function refreshCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
     }
 }

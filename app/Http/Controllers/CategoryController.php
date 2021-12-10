@@ -79,4 +79,10 @@ class CategoryController extends Controller implements BaseInterface
         return view('categories.search', compact('categoryResult'));
 
     }
+
+    public function show($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('categories.detail', compact($category));
+    }
 }

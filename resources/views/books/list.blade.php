@@ -6,8 +6,10 @@
             <div class="search-box">
                 <form action="{{ route('books.search') }}" method="GET">
                     <div class="input-group">
-                        <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
-                            <input type="search" name="keyword" class="form-control ds-input"  placeholder="Search..." aria-label="Search for..." >
+                        <span class="algolia-autocomplete"
+                              style="position: relative; display: inline-block; direction: ltr;">
+                            <input type="search" name="keyword" class="form-control ds-input" placeholder="Search..."
+                                   aria-label="Search for...">
                         </span>
                         <div class="btn">
                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -55,7 +57,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $book->name }}</td>
-                                            <td>{{ $book->desc }}</td>
+                                            <td>{!! $book->desc !!}</td>
                                             <td>
                                                 @if ($book->image)
                                                     <img src="{{ asset('storage/' . $book->image) }}"
@@ -111,7 +113,7 @@
                                 @endif
                             </table>
 
-                                {{$books->links()}}
+                            {{$books->links()}}
 
                         </div>
                         <!-- /.card-body -->

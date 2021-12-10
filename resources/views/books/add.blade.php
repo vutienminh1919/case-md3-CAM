@@ -28,8 +28,9 @@
                                     <div class="form-group">
                                         <label>Mô tả</label>
                                         <strong class="text-danger">*</strong>
-                                        <input type="text" value="{{ old('desc') }}"
-                                               class="form-control @error('desc') is-invalid  @enderror" name="desc">
+                                        <textarea name="desc" id="content" >{{ old('desc') }}</textarea>
+{{--                                        <input type="text" value="{{ old('desc') }}"--}}
+{{--                                               class="form-control @error('desc') is-invalid  @enderror" name="desc">--}}
                                         @error('desc')
                                         <p class="text-danger">{{ $message }}</p>
                                         @enderror
@@ -71,14 +72,14 @@
                                             @endforeach
                                         </select>
 
-
                                         <button type="submit" class="btn btn-primary">Lưu</button>
-                                        <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy
-                                        </button>
+                                        <a type="button" class="btn btn-danger" href="{{route('books.index')}}">Hủy
+                                            </a>                                    
 
                                         <p>Trường <strong class="text-danger"> * </strong> là trường bắt buộc!</p>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                     </div>
