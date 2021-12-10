@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('files/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('files/assets/css/widget.css') }}">
+    <script src="https://cdn.tiny.cloud/1/1bijjwb2ll8hkecdo7moagdxz2ep5m6r023vcv6jk4fk7d0b/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
     @toastr_css
 </head>
 
@@ -81,6 +83,12 @@
     <script type="text/javascript" src="{{ asset('files/assets/pages/dashboard/custom-dashboard.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('files/assets/js/script.min.js') }}"></script>
     <script src="{{ asset('js/my.js') }}"></script>
+    <script>
+        tinymce.init({
+            selector: '#content'
+        });
+    </script>
+
 {{--    @jquery--}}
     @toastr_js
     @toastr_render

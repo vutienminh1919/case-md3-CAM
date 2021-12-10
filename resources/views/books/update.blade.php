@@ -38,8 +38,9 @@
                                     <div class="form-group">
                                         <label>Mô tả</label>
                                         <strong class="text-danger">*</strong>
-                                        <input type="text" value="{{ $book->desc }}"
-                                            class="form-control @error('desc') is-invalid  @enderror" name="desc">
+                                        <textarea id="content" name="desc">{!! $book->desc !!}</textarea>
+{{--                                        <input type="text" value="{{ $book->desc }}"--}}
+{{--                                            class="form-control @error('desc') is-invalid  @enderror" name="desc">--}}
                                         @error('desc')
                                             <p class="text-danger">{{ $message }}</p>
                                         @enderror
@@ -80,10 +81,10 @@
                                         </select>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Lưu</button>
-{{--                                    <a type="button" class="btn btn-danger" href="{{route('books.index')}}">Quay--}}
-{{--                                        lại</a>--}}
-                                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy
-                                    </button>
+                                    <a type="button" class="btn btn-danger" href="{{route('books.index')}}">Hủy
+                                    </a>
+{{--                                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy--}}
+{{--                                    </button>--}}
                                 </form>
                             </div>
                             <!-- /.card-body -->

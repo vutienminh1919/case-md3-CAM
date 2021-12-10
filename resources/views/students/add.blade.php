@@ -74,8 +74,10 @@
 
 
                                     <button type="submit" class="btn btn-primary">Lưu</button>
-                                    <button class="btn btn-secondary"
-                                        onclick="window.history.go(-1); return false;">Hủy</button>
+                                    <a type="button" class="btn btn-danger" href="{{route('students.index')}}">Hủy</a>
+
+                                    {{--                                    <button class="btn btn-secondary"--}}
+{{--                                        onclick="window.history.go(-1); return false;">Hủy</button>--}}
                                     <p>Trường <strong class="text-danger"> * </strong> là trường bắt buộc!</p>
                                 </form>
 

@@ -120,6 +120,7 @@
                                             <button class="btn btn-success" type="submit">Cho
                                                 mượn
                                             </button>
+                                            <a type="button" class="btn btn-danger" href="{{route('borrows.index')}}">Hủy</a>
                                         </div>
                                     </div>
                                 </div>
