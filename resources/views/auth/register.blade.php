@@ -39,9 +39,9 @@
                 <form class="login100-form validate-form" method="post" action="{{ route('auth.register') }}">
 
                     @csrf
-                    <span class="login100-form-title p-b-49">
+                    <h1 class="text-center">
                         Đăng ký tài khoản
-                    </span>
+                    </h1>
 
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
                         <span class="label-input100">Tên</span>
@@ -71,6 +71,9 @@
                             <button class="login100-form-btn" type="submit">
                                 Đồng ý
                             </button>
+                        </div>
+                        <div class="login100-form-btn">
+                       <a href="{{ route('login') }}" type="button" class="btn btn-danger">Hủy</a>
                         </div>
                     </div>
 

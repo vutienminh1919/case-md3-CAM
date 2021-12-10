@@ -90,7 +90,7 @@ class UserController extends Controller implements BaseInterface, UserInterface
         try {
             $user = User::findOrFail($id);
             $user->name = $request->name;
-            $user->email = $request->email;
+            
             $user->save();
             $user->roles()->sync($request->role);
             DB::commit();

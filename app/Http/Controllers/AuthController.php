@@ -34,6 +34,7 @@ class AuthController extends Controller
         if ($this->loginService->checkLogin($request)) {
             toastr()->success("Đăng nhập thành công !!");
             return redirect()->route('home.index');
+            
         }
         else{
             return view('auth.fail');
@@ -56,7 +57,10 @@ class AuthController extends Controller
         $data = $request->only('name', 'email', 'password');
         $data['password'] = Hash::make($request->password);
         $user = User::query()->create($data);
+        $user->save();
         toastr()->success('Đăng ký thành công  !!');
+
+        
         return redirect()->route('login');
 //        return view('auth.login');
     }
@@ -93,6 +97,7 @@ class AuthController extends Controller
         }
         $user->password = Hash::make($request->newPassword);
         $user->save();
+        toastr()->success('Đổi mật khẩu thành công');
         return redirect()->route('auth.login');
 
 
