@@ -10,7 +10,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Thêm mới phiếu mượn</h3>
                     </div>
-                    <!-- /.card-header -->
+                 
                     <form action="" method="post">
 
                         @csrf
@@ -130,13 +130,13 @@
                             </div>
                         </div>
                     </form>
-                    <!-- /.card-body -->
+                  
                 </div>
-                <!-- /.card -->
+             
             </div>
-            <!-- /.col -->
+         
         </div>
-        <!-- /.row -->
+      
     </div>
 
     </section>

@@ -56,8 +56,9 @@
 						<input class="input100" type="password" name="password" placeholder="Type your password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
+					<br>
                     <div class="wrap-input100 validate-input" data-validate="Captcha is required">
-                        <span class="label-input100">Captcha</span>
+                        <span class="label-input100">Mã xác nhận	</span>
                         <div class="captcha">
                             <div class="row">
                                 <span>{!! captcha_img() !!}</span>

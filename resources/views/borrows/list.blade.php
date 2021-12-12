@@ -21,7 +21,7 @@
         <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button">
             <span>Print</span>
         </button>
-       
+
         <div class="main-container">
             <div class="xs-pd-20-10 pd-ltr-20">
                 <div class="card mt-2">
@@ -44,12 +44,11 @@
                                 @foreach ($borrows as $key => $borrow)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $borrow->student->name ?? " " }}</td>
-                                        <td>{{ $borrow->book->name ?? " " }}</td>
+                                        <td>{{ $borrow->student->name }}</td>
+                                        <td>{{ $borrow->book->name }}</td>
                                         <td>{{ $borrow->borrow_date }}</td>
                                         <td>{{ $borrow->borrow_return }}</td>
                                         <td>{{ $borrow->status }}</td>
-
                                         <td>
                                             <a class="btn btn-outline-danger"
                                                 onclick="return confirm('Bạn có muốn xóa phiếu mượn{{ $borrow->id }} không?')"
@@ -68,6 +67,7 @@
                                         </td>
                                 @endforeach
                                 </tr>
+                            </tbody>
                         </table>
                     </div>
 
@@ -78,5 +78,5 @@
         </div>
 
     </div>
-    
+
 @endsection
