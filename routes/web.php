@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PrintController;
 use App\Http\Controllers\BorrowController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ForgotPasswordController;
 
 
 /*
@@ -121,7 +122,13 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 Route::get('/refresh-captcha', [AuthController::class, 'refreshCaptcha']);
-Route::get('/borrows-pdf', [BorrowController::class, 'createPDF'])->name('borrows.pdf');
+
+
+Route::get('/borrow', [PrintController::class, 'index']);
+Route::get('/print', [PrintController::class, 'print']);
+Route::get('/pdf', [PrintController::class, 'pdf']);
+
+
 
 
 
