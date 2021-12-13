@@ -2,7 +2,7 @@
 @section('title', 'Danh sach phieu muon')
 @section('content')
     <div class="pcoded-content">
-        <div class="wrapper">
+        <div class="btn btn-White">
             <div class="search-box">
                 <form action="#" method="GET">
                     <div class="input-group">
@@ -18,9 +18,7 @@
                 </form>
             </div>
         </div>
-        <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button">
-            <span>Print</span>
-        </button>
+       
 
         <div class="main-container">
             <div class="xs-pd-20-10 pd-ltr-20">
@@ -50,15 +48,13 @@
                                     <td>{{ $borrow->borrow_return }}</td>
                                     <td>{{ $borrow->status }}</td>
 
-                                    <td>
+                                    <td>     
                                         <a class="btn btn-outline-primary"
-                                           onclick="return confirm ('Bạn có chắc muốn khôi phục không ?')"
-                                           href="{{ route('borrows.restore', ['id' => $borrow->id]) }}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
-                                                <path
-                                                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z">
-                                                </path>
+                                        onclick="return confirm ('Bạn có chắc muốn khôi phục không ?')"
+                                        href="{{ route('borrows.restore', ['id' => $borrow->id]) }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"></path>
+                                                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"></path>
                                             </svg>
                                         </a>
                                         <a class="btn btn-outline-danger"
