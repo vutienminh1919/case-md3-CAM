@@ -2,7 +2,7 @@
 @section('title', 'Danh sách ')
 @section('content')
     <div class="pcoded-content">
-        <div class="wrapper">
+        <div class="btn btn-White">
             <div class="search-box">
                 <form action="{{ route('books.search') }}" method="GET">
                     <div class="input-group">
