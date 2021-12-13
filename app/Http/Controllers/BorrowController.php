@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Borrow;
 use App\Models\Student;
+
+
+use PDF;
+
+
 use Illuminate\Http\Request;
 
 class BorrowController extends Controller
@@ -77,8 +82,27 @@ class BorrowController extends Controller
         $room->delete();
         toastr()->success('Xóa phiếu mượn thành công ');
         return redirect()->route('borrows.index');
+    }
+    public function showTrashBorrow()
+    {
+        $borrowsDeleted = Borrow::onlyTrashed()->get();
+        return view('borrows.trash', compact('borrowsDeleted'));
 
     }
 
+    public function hardDestroy($id)
+    {
+        Borrow::withTrashed()->where('id',$id)->forceDelete();
+        toastr()->success("Xóa cứng thành công");
+        return redirect()->route('borrows.trash');
+    }
+
+    public function restore($id)
+    {
+
+        Borrow::withTrashed()->where('id',$id)->restore();
+        toastr()->success('khôi phục thành công !');
+        return redirect()->back();
+    }
 
 }

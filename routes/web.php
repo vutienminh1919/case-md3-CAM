@@ -57,6 +57,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('{id}/update', [BookController::class, 'edit'])->name('books.update');
         Route::post('{id}/update', [BookController::class, 'update'])->name('books.edit');
         Route::get('{id}/delete', [BookController::class, 'destroy'])->name('books.delete');
+        Route::get('/trash', [BookController::class, 'showTrashBook'])->name('books.trash');
+        Route::get('/{id}/trash', [BookController::class, 'hardDestroy'])->name('books.hardDelete');
+        Route::get('/{id}/restore', [BookController::class, 'restore'])->name('books.restore');
         Route::get('/search', [BookController::class, 'search'])->name('books.search');
 
     });
@@ -80,6 +83,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
         Route::post('{id}/edit', [StudentController::class, 'update'])->name('students.update');
         Route::get('{id}/delete', [StudentController::class, 'destroy'])->name('students.delete');
+        Route::get('/trash', [StudentController::class, 'showTrashStudent'])->name('students.trash');
+        Route::get('/{id}/trash', [StudentController::class, 'hardDestroy'])->name('students.hardDelete');
+        Route::get('/{id}/restore', [StudentController::class, 'restore'])->name('students.restore');
         Route::get('/search', [StudentController::class, 'search'])->name('students.search');
 
     });
@@ -95,6 +101,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/{id}/edit', [BorrowController::class, 'edit'])->name('borrows.edit');
         Route::post('/{id}/edit', [BorrowController::class, 'update'])->name('borrows.update');
         Route::get('/{id}/delete', [BorrowController::class, 'delete'])->name('borrows.delete');
+        Route::get('/trash', [BorrowController::class, 'showTrashBorrow'])->name('borrows.trash');
+        Route::get('/{id}/trash', [BorrowController::class, 'hardDestroy'])->name('borrows.hardDelete');
+        Route::get('/{id}/restore', [BorrowController::class, 'restore'])->name('borrows.restore');
         Route::get('/search', [BorrowController::class, 'search'])->name('borrows.search');
 
     });
@@ -112,8 +121,7 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 Route::get('/refresh-captcha', [AuthController::class, 'refreshCaptcha']);
-
-
+Route::get('/borrows-pdf', [BorrowController::class, 'createPDF'])->name('borrows.pdf');
 
 
 

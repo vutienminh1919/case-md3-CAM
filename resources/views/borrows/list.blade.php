@@ -18,10 +18,8 @@
                 </form>
             </div>
         </div>
-        <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button">
-            <span>Print</span>
-        </button>
-       
+
+
         <div class="main-container">
             <div class="xs-pd-20-10 pd-ltr-20">
                 <div class="card mt-2">
@@ -78,5 +76,5 @@
         </div>
 
     </div>
-    
+
 @endsection

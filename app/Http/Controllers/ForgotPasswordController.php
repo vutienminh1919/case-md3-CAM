@@ -17,7 +17,6 @@ class ForgotPasswordController extends Controller
         return view('auth.forgetPassword');
     }
 
-
     public function submitForgetPasswordForm(Request $request)
     {
         $request->validate([
@@ -32,7 +31,7 @@ class ForgotPasswordController extends Controller
             'created_at' => Carbon::now()
         ]);
 
-        Mail::send('auth.forgetPassword', ['token' => $token], function ($message) use ($request) {
+        Mail::send('auth.email', ['token' => $token], function($message) use($request){
             $message->to($request->email);
             $message->subject('Reset Password');
         });
@@ -40,10 +39,10 @@ class ForgotPasswordController extends Controller
         return back()->with('message', 'We have e-mailed your password reset link!');
     }
 
-    public function showResetPasswordForm($token)
-    {
+    public function showResetPasswordForm($token) {
         return view('auth.forgetPasswordLink', ['token' => $token]);
     }
+
 
     public function submitResetPasswordForm(Request $request)
     {
@@ -71,6 +70,5 @@ class ForgotPasswordController extends Controller
 
         return redirect('/login')->with('message', 'Your password has been changed!');
     }
-
 
 }

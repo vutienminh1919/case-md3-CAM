@@ -112,4 +112,26 @@ class BookController extends Controller implements BaseInterface
         return view('books.search', compact('bookResult'));
     }
 
+    public function showTrashBook()
+    {
+        $booksDeleted = Book::onlyTrashed()->get();
+        return view('books.trash', compact('booksDeleted'));
+
+    }
+
+    public function hardDestroy($id)
+    {
+       Book::withTrashed()->where('id',$id)->forceDelete();
+        toastr()->success("Xóa cứng thành công");
+        return redirect()->route('books.trash');
+    }
+
+    public function restore($id)
+    {
+
+         Book::withTrashed()->where('id',$id)->restore();
+         toastr()->success('khôi phục thành công !');
+         return redirect()->back();
+    }
+
 }

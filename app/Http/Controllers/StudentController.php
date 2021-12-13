@@ -92,4 +92,25 @@ class StudentController extends Controller
         return view('students.search',compact('studentResult'));
 
     }
+    public function showTrashStudent()
+    {
+        $studentsDeleted = Student::onlyTrashed()->get();
+        return view('students.trash', compact('studentsDeleted'));
+
+    }
+
+    public function hardDestroy($id)
+    {
+        Student::withTrashed()->where('id',$id)->forceDelete();
+        toastr()->success("Xóa cứng thành công");
+        return redirect()->route('students.trash');
+    }
+
+    public function restore($id)
+    {
+
+        Student::withTrashed()->where('id',$id)->restore();
+        toastr()->success('khôi phục thành công !');
+        return redirect()->back();
+    }
 }
