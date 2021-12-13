@@ -2,7 +2,7 @@
 @section('title', 'Danh sach phieu muon')
 @section('content')
     <div class="pcoded-content">
-        <div class="wrapper">
+        <div class="btn btn-White">
             <div class="search-box">
                 <form action="{{route('borrows.search')}}" method="GET">
                     <div class="input-group">
